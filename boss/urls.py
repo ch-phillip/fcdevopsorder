@@ -13,13 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from boss import views
 
 urlpatterns = [
-    path('order/', include('order.urls')),
-    path('boss/', include('boss.urls')),
-    path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('timeinput/',views.time_input, name ="timeinput"),
+    
+    
 
 ]
